@@ -19,7 +19,7 @@
 ## 📁 파일 컨벤션
 
 - 개인 폴더에는 `js 파일`만 허용해요.
-- 파일명은 `[문제레벨/번호] 문제제목.js`로 생성해요.
+- 파일명은 `[문제레벨] 문제제목.js`로 생성해요.
 - 각 파일 내 상단에 다음 내용을 주석으로 작성해요.
 
 ```js
@@ -47,10 +47,10 @@
 - 컨벤션 사용 예시
 
 ```bash
-git commit -m "feat(${플랫폼}): [${레벨/문제번호/티어 중 택1}] ${문제 제목}"
+git commit -m "feat(${플랫폼}): [${레벨/티어 중 택1}] ${문제 제목}"
 
 git commit -m "feat(programmers): [Lv1] 완주하지 못한 선수"
-git commit -m "feat(baekjoon): [실버1/1234] 최단경로"
+git commit -m "feat(baekjoon): [Silver1] 최단경로"
 ```
 
 &nbsp;
