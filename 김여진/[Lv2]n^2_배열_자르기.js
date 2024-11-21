@@ -5,5 +5,5 @@
 // 시간 복잡도 O(right - left + 1) - 배열의 길이만큼 계산
 
 function solution(n, left, right) {
-  return Array.from({length:right-left+1},(_,i)=>Math.max(Math.floor((left+i)/n), (left+i)%n+1));
+  return Array.from({length:right-left+1},(_,i)=>Math.max(Math.floor((left+i)/n)+1, (left+i)%n+1));
 }
