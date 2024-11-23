@@ -6,5 +6,5 @@
 
 function solution(arr, divisor) {
   const result = arr.filter((a) => a % divisor === 0).sort((a, b) => a - b);
-  return result.length ? res : [-1];
+  return result.length ? result : [-1];
 }
