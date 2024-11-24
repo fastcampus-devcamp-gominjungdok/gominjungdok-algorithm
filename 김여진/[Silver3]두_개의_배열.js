@@ -8,7 +8,10 @@ const findCloset = (arr, target) => {
   let left = 0;
   let right = arr.length - 1;
 
-  while(left<right){
+  if (target<=arr[left]) return arr[left];
+  if (target>=arr[right]) return arr[right];
+
+  while (left < right) {
     const mid = Math.floor((left + right) / 2);
     if (arr[mid] === target) {
       return arr[mid];
@@ -18,31 +21,29 @@ const findCloset = (arr, target) => {
       right = mid;
     }
   }
-  if(left===0) return arr[left];
-  
   return Math.abs(arr[left] - target) < Math.abs(arr[left - 1] - target)
-  ? arr[left]
-  : arr[left - 1];
+    ? arr[left]
+    : arr[left - 1];
+};
+
+const fs = require("fs");
+const filePath = process.platform === "linux" ? "/dev/stdin" : "example.txt";
+const input = fs.readFileSync(filePath).toString().trim().split("\n");
+
+const testCaseCnt = Number(input[0]);
+const results = [];
+
+let index = 1;
+for (let t = 0; t < testCaseCnt; t++) {
+  index++; //길이는 필요 없음
+  const A = input[index++].split(" ").map(Number);
+  const B = input[index++]
+    .split(" ")
+    .map(Number)
+    .sort((a, b) => a - b);
+
+  results.push(A.reduce((acc, a) => acc + findCloset(B, a), 0));
 }
 
-const readline = require('readline');
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-});
-const input=[];
-rl.on('line',(line)=>input.push(line))
-  .on('close',()=>{
-    const testCaseCnt = Number(input[0]);
-    const results = [];
+results.forEach((result) => console.log(result));
 
-    let index = 1;
-    for(let t=0; t<testCaseCnt; t++){
-      index++; //길이는 필요 없음
-      const A = input[index++].split(' ').map(Number);
-      const B = input[index++].split(' ').map(Number).sort((a,b)=>a-b);
-
-      results.push(A.reduce((acc,a)=>acc+findCloset(B,a),0));
-    }
-    results.forEach((result) => console.log(result));
-})
