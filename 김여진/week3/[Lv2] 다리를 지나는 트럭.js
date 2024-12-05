@@ -7,7 +7,7 @@
 // 큐의 front 트럭 나갈 시간이 시간과 같으면 뺌
 // 다리에 올라가있는 무게 + 트럭의 무게가 최대 무게 이하이면 트럭 올리고, 아니면 큐의 front 트럭이 빠지는 시간으로 시간을 업데이트
 // 5. 최종 시간을 리턴 
-// 시간 복잡도 O(nlogn)
+// 시간 복잡도 O(n)
 
 function solution(bridge_length, weight, truck_weights) {
   let time = 0;
