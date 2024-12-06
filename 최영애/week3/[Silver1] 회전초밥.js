@@ -2,7 +2,6 @@
 // 1. 손님 당 배열 하나씩 만들고 전체 손님 배열로 감싼다.
 // 2. 손님의 순서대로 목록 값과 주어진 초밥의 값을 비교해서 일치하면 해당 요소를 빼고 순회를 멈춘다.
 // 3. 이때 shift를 실행할 때 각 손님이 먹은 초밥의 개수를 ++한다.
-// 시간복잡도: 곡 수 n => O(n log n)
 
 // const fs = require('fs');
 // const filePath = process.platform === "linux" ? "/dev/stdin" : "example.txt";
@@ -30,9 +29,10 @@
 
 
 
-// 문제 접근 2
+// 문제 접근 2 - 틀림
 // 1. 위의 방법으로 하니 시간 초과가 떠서 시간을 줄일 수 있는 방법을 생각했다.
-// 2. indexOf, splice가 시간복잡도가 커서 set을 사용해봤다.
+// 2. 손님 기준으로 생각하지 않고 초밥 기준으로 생각했다.
+// 3. 그런데 답이 틀렸다.
 
 // const fs = require('fs');
 // const filePath = process.platform === "linux" ? "/dev/stdin" : "example.txt";
