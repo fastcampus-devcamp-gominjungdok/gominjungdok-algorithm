@@ -10,7 +10,7 @@
 // 1. 모든 알파벳을 소문자로 미리 만든 후 소문자 a를 대문자 A로 변환
 
 function solution(myString) {
-  var answer = "";
+  let answer = "";
   answer += myString.toLowerCase();
   answer = answer.replaceAll("a", "A");
 
