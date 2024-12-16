@@ -8,7 +8,7 @@
 // 2. 생성된 배열의 요소 중 소수인 것의 개수 계산
 // 시간복잡도: O(n! * 10^n/2) - n은 numbers의 길이 
 
-const generateCombinations = (arr, curr, used, permutations, isVisited) => {
+const generatePermutations = (arr, curr, used, permutations, isVisited) => {
 
   if (curr.length > 0) {
     const n = parseInt(curr.join(''), 10);
@@ -22,7 +22,7 @@ const generateCombinations = (arr, curr, used, permutations, isVisited) => {
     if (!used[i]) {
       used[i] = true;
       curr.push(arr[i]);
-      generateCombinations(arr, curr, used, permutations, isVisited);
+      generatePermutations(arr, curr, used, permutations, isVisited);
       curr.pop();
       used[i] = false;
     }
@@ -41,7 +41,7 @@ function solution(numbers) {
   const permutations = [];
   const isVisited = new Set();
 
-  generateCombinations(
+  generatePermutations(
     numbers.split(''),
     [],
     Array(numbers.length).fill(false),
