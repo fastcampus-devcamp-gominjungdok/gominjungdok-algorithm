@@ -1,6 +1,6 @@
 // 문제 접근
 // 숫자를 꺼내 오름차순으로 정렬
-// 시간 복잡도 O(n*n)
+// 시간 복잡도 O(n)
 
 const input = require('fs').readFileSync('/dev/stdin', 'utf-8').toString().trim().split('\n');
 
